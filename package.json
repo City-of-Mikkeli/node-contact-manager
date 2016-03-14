@@ -1,0 +1,19 @@
+{
+  "name": "node-contact-manager",
+  "version": "0.0.1",
+  "description": "Contact management software for nodejs.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/City-of-Mikkeli/node-contact-manager.git"
+  },
+  "author": "Heikki Kurhinen",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/City-of-Mikkeli/node-contact-manager/issues"
+  },
+  "homepage": "https://github.com/City-of-Mikkeli/node-contact-manager#readme"
+}
