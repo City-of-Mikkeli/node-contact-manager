@@ -31,16 +31,13 @@ module.exports = function(app){
   });
   
   /*
-   * Applications
+   * Contacts
    */
-  app.post(config.server_root+'/application', application.createApplication);
-  app.post(config.server_root+'/update', authenticate(['manager', 'admin']), application.updateApplication);
-  app.get(config.server_root+'/application/:id', authenticate(['manager', 'admin']), application.getApplication);
-  
-  /*
-   *  Admin
-   */
-  app.get(config.server_root+'/admin', authenticate(['manager', 'admin']), admin.renderAdminView);
+   app.post(config.server_root+'/contact', authenticate(['admin']), contact.create);
+   app.put(config.server_root+'/contact', authenticate(['admin']), contact.update);
+   app.get(config.server_root+'/contact/:id', authenticate(['admin']), contact.find);
+   app.get(config.server_root+'/contact', authenticate(['admin']), contact.list);
+   app.delete(config.server_root+'/contact/:id', authenticate(['admin']), contact.remove);
   
   /*
    * User
