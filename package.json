@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/City-of-Mikkeli/node-contact-manager/issues"
   },
-  "homepage": "https://github.com/City-of-Mikkeli/node-contact-manager#readme"
+  "homepage": "https://github.com/City-of-Mikkeli/node-contact-manager#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.7",
+    "passport": "^0.3.2"
+  }
 }
