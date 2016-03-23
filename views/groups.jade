@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container-fluid
+    .row
+      .col-lg-12
+        a#menu-toggle.btn.btn-default(href='#menu-toggle') Piilota/näytä valikko
+        button#excelImport.btn.btn-default.pull-right Vie Exceliin
+        table#groupTable
+          thead
+            tr
+              th Nimi
+          tbody
+            each group in groups
+              tr(data-group-id=group._id)
+                td #{group.name}
