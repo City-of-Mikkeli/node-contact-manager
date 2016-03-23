@@ -17,6 +17,9 @@ function authenticate(allowedRoles) {
 }
 
 module.exports = function(app) {
+  /*
+   * Navigation
+   */
   app.get(config.server_root + '/login', function(req, res) {
     res.render('login', {
       message: req.flash('loginMessage'),
@@ -31,6 +34,13 @@ module.exports = function(app) {
   app.get(config.server_root + '/changepass', authenticate(['manager', 'admin']), function(req, res) {
     res.render('setpassword', { root: config.server_root });
   });
+
+  app.get(config.server_root, authenticate(['admin', 'manager']), function(req, res){
+    res.redirect(config.server_root+'/view/contacts');
+  });
+  
+  app.get(config.server_root+'/view/contacts', authenticate(['admin', 'manager']), contact.view);
+  app.get(config.server_root+'/view/groups', authenticate(['admin', 'manager']), group.view);
 
   /*
    * Contacts

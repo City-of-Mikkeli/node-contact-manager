@@ -1,5 +1,15 @@
 var Contact = require('../../model/contact');
 var _ = require('underscore');
+
+exports.view = function(req, res){
+  Contact.find({}, function(err, contacts){
+    if(err){
+      res.status(500).send(err);
+    }else{
+      res.render('contacts', {contacts: contacts});
+    }
+  });
+};
    
 exports.create = function(req, res){
   var contact = new Contact(req.body.contact);

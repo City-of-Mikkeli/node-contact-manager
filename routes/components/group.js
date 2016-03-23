@@ -1,5 +1,15 @@
 var Group = require('../../model/group');
 var _ = require('underscore');
+
+exports.view = function(req, res){
+  Group.find({}, function(err, groups){
+    if(err){
+      res.status(500).send(err);
+    }else{
+      res.render('groups', {groups: groups});
+    }
+  });
+};
    
 exports.create = function(req, res){
   var group = new Group(req.body.group);
