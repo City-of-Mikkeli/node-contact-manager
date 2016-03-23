@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .container-fluid
+    .row
+      .col-lg-12
+        a#menu-toggle.btn.btn-default(href='#menu-toggle') Piilota/näytä valikko
+        button#excelImport.btn.btn-default.pull-right Vie Exceliin
+        table#contactTable
+          thead
+            tr
+              th Nimi
+              th Osoite
+              th Puhelin
+              th Email
+          tbody
+            each contact in contacts
+              tr(data-contact-id=contact._id)
+                td #{contact.name}
+                td #{contact.address}
+                td #{contact.phone}
+                td #{contact.email}
